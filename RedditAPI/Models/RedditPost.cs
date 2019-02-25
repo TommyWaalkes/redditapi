@@ -27,6 +27,8 @@ namespace RedditAPI.Models
             JToken post = posts[i];
 
             Title = post["data"]["title"].ToString();
+            ImageURL = post["data"]["thumbnail"].ToString();
+            LinkURL = post["data"]["permalink"].ToString();
         }
     }
 }

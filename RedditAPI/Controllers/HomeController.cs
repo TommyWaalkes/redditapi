@@ -14,16 +14,8 @@ namespace RedditAPI.Controllers
     {
         public ActionResult Index()
         {
-            //HttpWebRequest request = WebRequest.CreateHttp("https://www.reddit.com/r/nba/.json");
-            //HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-
-            //StreamReader rd = new StreamReader(response.GetResponseStream());
-            //string data = rd.ReadToEnd();
-
-            //JObject redditJson = JObject.Parse(data);
-            //RedditPost p = new RedditPost(data, 0);
-
-            RedditPost rp = RedditDAL.GetPost(0);
+            string text = RedditDAL.GetData();
+            RedditPost rp = new RedditPost(text,0);
 
             return View(rp);
         }
